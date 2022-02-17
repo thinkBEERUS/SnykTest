@@ -12,7 +12,7 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             while (1 == 1)
-                break;
+                continue;
         }
     }
 }
