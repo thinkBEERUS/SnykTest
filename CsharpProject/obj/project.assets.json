@@ -1,11 +1,37 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "MavenNet/1.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MavenNet.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MavenNet.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MavenNet/1.0.4": {
+      "sha512": "hpr+9lzMfZjwtOzCGwBv/Zhuc9xZnY/iIpbAiY49g+sup4J/brXSdGp2jEivXEEcJWv2yIkiMc7qrjAl653uJQ==",
+      "type": "package",
+      "path": "mavennet/1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/MavenNet.dll",
+        "lib/net45/MavenNet.xml",
+        "mavennet.1.0.4.nupkg.sha512",
+        "mavennet.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "MavenNet >= 1.0.4"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\avandermerwe\\.nuget\\packages\\": {},
@@ -49,6 +75,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "MavenNet": {
+            "target": "Package",
+            "version": "[1.0.4, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -70,5 +102,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MavenNet 1.0.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MavenNet",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
