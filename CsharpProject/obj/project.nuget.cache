@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "uiTVTqOdB7ClWDusUZy2M5UlcJmt376yQz3BWOxdg1tnI+ViQjya9KAZc1d4e74x9Bw6/MDbGVFeci17XhZogg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\avandermerwe\\Documents\\GitHub\\SnykTest\\CsharpProject\\CsharpProject.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\avandermerwe\\.nuget\\packages\\mavennet\\1.0.4\\mavennet.1.0.4.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MavenNet 1.0.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MavenNet",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
