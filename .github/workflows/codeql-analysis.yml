@@ -35,6 +35,14 @@ jobs:
         # Learn more about CodeQL language support at https://git.io/codeql-language-support
 
     steps:
+    - name: Github Action for curl
+      uses: wei/curl@v1.1.1
+      
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args:  curl -H "Accept:application/vnd.github.v3+json" https://api.github.com/repos/thinkBEERUS/SnykTest/issues/7/labels
+
     - name: Checkout repository
       uses: actions/checkout@v2
 
