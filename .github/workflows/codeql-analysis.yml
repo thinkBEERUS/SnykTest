@@ -62,7 +62,9 @@ jobs:
       uses: sergeysova/jq-action@v2
       id: scanRes
       with:
-        cmd: 'curl /home/runner/work/SnykTest/results/csharp.sarif jq .[]'      
+        cmd: | 
+          'cd /home/runner/work/SnykTest/results/csharp.sarif'
+          'csharp.sarif jq .[]'
     - name: Show Results
       run: 'echo "Results: ${{ steps.scanRes.outputs.value }}"'      
     #- name: Check Scan Results
