@@ -85,7 +85,7 @@ jobs:
         cmd: 'curl /home/runner/work/SnykTest/results/csharp.sarif jq .[] | .results'      
     - name: Show Results
       run: 'echo "Results: ${{ steps.scanRes.outputs.value }}"'      
-    - name: Check Scan Results
-      uses: wei/curl@master
-      with:
-        args:  curl /home/runner/work/SnykTest/results/csharp.sarif
+    #- name: Check Scan Results
+    #  uses: wei/curl@master
+    #  with:
+    #    args:  curl /home/runner/work/SnykTest/results/csharp.sarif
