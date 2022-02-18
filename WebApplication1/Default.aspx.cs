@@ -11,8 +11,6 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (1 == 1)
-                return;
             while (1 == 1)
                 break;
         }
