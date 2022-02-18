@@ -17,21 +17,19 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Show Username
-        run: 'echo "Secrets: ${{ secrets.MAIL_USERNAME }}"' 
-      - name: Show pass
-        run: 'echo "Secrets: ${{ secrets.MAIL_PASSWORD }}"'
+      - name: Show Secrets
+        
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
           # Required mail server address:
           server_address: smtp.office365.com
           # Required mail server port:
-          server_port: 587
+          server_port: 465
           # Optional (recommended): mail server username:
-          username: support@signify.co.za
+          username: ${{secrets.MAIL_USERNAME}}
           # Optional (recommended) mail server password:
-          password: Nuh96946
+          password: ${{secrets.MAIL_PASSWORD}}
           # Required mail subject:
           subject: Security Scan - Result
           # Required recipients' addresses:
@@ -53,9 +51,9 @@ jobs:
           # Optional Message ID this message is replying to:
           #in_reply_to: <random-luke@example.com>
           # Optional unsigned/invalid certificates allowance:
-          ignore_cert: false
+          ignore_cert: true
           # Optional converting Markdown to HTML (set content_type to text/html too):
-          #convert_markdown: true
+          convert_markdown: true
           # Optional attachments:
           #attachments: attachments.zip,git.diff,./dist/static/*.js
           # Optional priority: 'high', 'normal' (default) or 'low'
