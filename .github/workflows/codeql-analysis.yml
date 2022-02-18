@@ -36,12 +36,7 @@ jobs:
 
     steps:
     - name: Github Action for curl
-      uses: wei/curl@v1.1.1
-      
-    - name: curl
-      uses: wei/curl@master
-      with:
-        args:  curl -H "Accept:application/vnd.github.v3+json" https://api.github.com/repos/thinkBEERUS/SnykTest/issues/7/labels
+      uses: wei/curl@v1.1.1          
 
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -74,3 +69,8 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
+    
+    - name: Check Scan Results
+      uses: wei/curl@master
+      with:
+        args:  curl /home/runner/work/SnykTest/results/csharp.sarif jq .[] | .results
