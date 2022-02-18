@@ -29,9 +29,9 @@ jobs:
           # Required mail server port:
           server_port: 587
           # Optional (recommended): mail server username:
-          username: ${{secrets.MAIL_USERNAME}}
+          username: support@signify.co.za
           # Optional (recommended) mail server password:
-          password: ${{secrets.MAIL_PASSWORD}}
+          password: Nuh96946
           # Required mail subject:
           subject: Security Scan - Result
           # Required recipients' addresses:
