@@ -37,10 +37,7 @@ jobs:
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
         # Learn more about CodeQL language support at https://git.io/codeql-language-support
 
-    steps:
-    - name: Github Action for curl
-      uses: wei/curl@v1.1.1          
-
+    steps:       
     - name: Checkout repository
       uses: actions/checkout@v2
 
@@ -72,8 +69,23 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
-    
+    - name: Setup jq Filtering
+      uses: sergeysova/jq-action@v2
+      id: version
+      with:
+        cmd: 'jq .version package.json -r'      
+    - name: Show my version
+      run: 'echo "version ${{ steps.version.outputs.value }}"'
+    - name: Setup curl
+      uses: wei/curl@v1.1.1   
+    - name: Setup jq Filtering
+      uses: sergeysova/jq-action@v2
+      id: scanRes
+      with:
+        cmd: 'curl /home/runner/work/SnykTest/results/csharp.sarif jq .[] | .results'      
+    - name: Show Results
+      run: 'echo "Results: ${{ steps.scanRes.outputs.value }}"'      
     - name: Check Scan Results
       uses: wei/curl@master
       with:
-        args:  curl /home/runner/work/SnykTest/results/csharp.sarif jq .[] | .results
+        args:  curl /home/runner/work/SnykTest/results/csharp.sarif
