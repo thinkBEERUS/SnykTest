@@ -59,7 +59,7 @@ jobs:
       uses: wei/curl@v1.1.1
       
     - name: Setup jq Filtering
-      working-directory: ./home/runner/work/SnykTest/results/
+      working-directory: ./
       id: scanRes
       run: 'csharp.sarif jq .[]'
     - name: Show Results
