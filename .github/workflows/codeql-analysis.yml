@@ -59,12 +59,9 @@ jobs:
       uses: wei/curl@v1.1.1
       
     - name: Setup jq Filtering
-      uses: sergeysova/jq-action@v2
+      working-directory: ./home/runner/work/SnykTest/results/
       id: scanRes
-      with:
-        cmd: | 
-          'cd /home/runner/work/SnykTest/results/csharp.sarif'
-          'csharp.sarif jq .[]'
+      run: 'csharp.sarif jq .[]'
     - name: Show Results
       run: 'echo "Results: ${{ steps.scanRes.outputs.value }}"'      
     #- name: Check Scan Results
